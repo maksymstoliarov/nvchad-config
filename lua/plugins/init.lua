@@ -48,8 +48,15 @@ return {
                 enable = true,
                 use_languagetree = true,
             },
-
             indent = { enable = true },
         },
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = require("configs.nvim-tree"),
     },
 }
