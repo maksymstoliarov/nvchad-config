@@ -4,7 +4,6 @@ return {
         event = "BufWritePre", -- uncomment for format on save
         opts = require("configs.conform"),
     },
-
     {
         "github/copilot.vim",
         lazy = false,
@@ -17,15 +16,12 @@ return {
             -- or run <leader>ch to see copilot mapping section
         end,
     },
-
-    -- These are some examples, uncomment them if you want to see them work!
     {
         "neovim/nvim-lspconfig",
         config = function()
             require("configs.lspconfig")
         end,
     },
-
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
@@ -58,5 +54,13 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         opts = require("configs.nvim-tree"),
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
     },
 }
