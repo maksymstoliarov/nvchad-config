@@ -11,3 +11,4 @@ o.softtabstop = 4
 o.shiftwidth = 4
 
 o.colorcolumn = "80"
+o.relativenumber = true

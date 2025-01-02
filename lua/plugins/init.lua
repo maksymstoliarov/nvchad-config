@@ -5,18 +5,6 @@ return {
         opts = require("configs.conform"),
     },
     {
-        "github/copilot.vim",
-        lazy = false,
-        config = function()
-            -- Mapping tab is already used by NvChad
-            vim.g.copilot_no_tab_map = true
-            vim.g.copilot_assume_mapped = true
-            vim.g.copilot_tab_fallback = ""
-            -- The mapping is set to other key, see custom/lua/mappings
-            -- or run <leader>ch to see copilot mapping section
-        end,
-    },
-    {
         "neovim/nvim-lspconfig",
         config = function()
             require("configs.lspconfig")
@@ -49,7 +37,7 @@ return {
     },
     {
         "nvim-tree/nvim-tree.lua",
-        lazy = false,
+        lazy = true,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
@@ -61,6 +49,19 @@ return {
         ft = { "markdown" },
         build = function()
             vim.fn["mkdp#util#install"]()
+        end,
+    },
+    {
+        "github/copilot.vim",
+        lazy = false,
+        config = function()
+            -- Mapping tab is already used by NvChad
+            vim.g.copilot_enabled = false
+            vim.g.copilot_no_tab_map = true
+            vim.g.copilot_assume_mapped = true
+            vim.g.copilot_tab_fallback = ""
+            -- The mapping is set to other key, see custom/lua/mappings
+            -- or run <leader>ch to see copilot mapping section
         end,
     },
 }
