@@ -27,6 +27,7 @@ return {
                 "markdown",
                 "json",
                 "yaml",
+                "rust",
             },
             highlight = {
                 enable = true,
@@ -37,7 +38,7 @@ return {
     },
     {
         "nvim-tree/nvim-tree.lua",
-        lazy = true,
+        lazy = false,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
@@ -63,5 +64,13 @@ return {
             -- The mapping is set to other key, see custom/lua/mappings
             -- or run <leader>ch to see copilot mapping section
         end,
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        opts = {
+            enabled = function()
+                return (vim.bo.ft ~= "markdown")
+            end,
+        },
     },
 }
