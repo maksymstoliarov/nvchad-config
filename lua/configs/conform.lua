@@ -6,7 +6,7 @@ local options = {
         go = { "gofmt" },
         python = { "isort", "black" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
-        -- php = { "php-cs-fixer" }, --  "pint", "php_cs_fixer
+        -- php = { "pint" }, --  "pint", "php_cs_fixer
         -- rust = { "rustfmt" },
     },
     format_on_save = {

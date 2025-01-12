@@ -20,5 +20,5 @@ map(
     "n",
     "<Leader>;",
     ':lua if string.sub(vim.api.nvim_get_current_line(), -1) ~= ";" then vim.cmd("normal! A;") end<CR>',
-    { noremap = true, silent = true }
+    { noremap = true, silent = true, desc = "Add ; to the end of the line" }
 )
